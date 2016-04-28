@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<Pane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane gridLinesVisible="true" layoutY="6.0" prefHeight="250.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+          <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Pane layoutX="55.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0" />
+      <Pane layoutX="127.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0" />
+      <Pane layoutX="203.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0" />
+   </children>
+</Pane>
