@@ -1,1 +1,5 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.whiteKey{-fx-background-color:white;}
+.whiteKey:hover{-fx-background-color:#f2f2f2;}
+
+.blackKey{-fx-background-color:black;}
+.blackKey:hover{-fx-background-color:#333333;}
