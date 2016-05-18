@@ -1,18 +1,10 @@
 package application;
 
-import javafx.*;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.TreeSet;
-
-import javax.sound.midi.*;
 
 public class KeyController {
 
@@ -26,34 +18,42 @@ public class KeyController {
 
 		if(x.getId().equals("keyC")){
 			Thread t1 = new Thread (new playSequenceCommand(fileLocations.getLocation(0)));
-			tFeld.setText("Taste C gedrückt!");
+			t1.start();
+			tFeld.setText("Taste C gedrückt! ");
 		}
 		else if(x.getId().equals("keyD")){
-			//playSequence(fileLocations.getLocation(1));
+			Thread t2 = new Thread (new playSequenceCommand(fileLocations.getLocation(1)));
+			t2.start();
 			tFeld.setText("Taste D gedrückt!");
 		}
 		else if(x.getId().equals("keyE")){
-			//playSequence(fileLocations.getLocation(2));
+			Thread t3 = new Thread (new playSequenceCommand(fileLocations.getLocation(2)));
+			t3.start();
 			tFeld.setText("Taste E gedrückt!");
 		}
 		else if(x.getId().equals("keyF")){
-			//playSequence(fileLocations.getLocation(3));
+			Thread t4 = new Thread (new playSequenceCommand(fileLocations.getLocation(3)));
+			t4.start();
 			tFeld.setText("Taste F gedrückt!");
 		}
 		else if(x.getId().equals("keyG")){
-			//playSequence(fileLocations.getLocation(4));
+			Thread t5 = new Thread (new playSequenceCommand(fileLocations.getLocation(4)));
+			t5.start();
 			tFeld.setText("Taste G gedrückt!");
 		}
 		else if(x.getId().equals("keyA")){
-			//playSequence(fileLocations.getLocation(5));
+			Thread t6 = new Thread (new playSequenceCommand(fileLocations.getLocation(5)));
+			t6.start();
 			tFeld.setText("Taste A gedrückt!");
 		}
 		else if(x.getId().equals("keyH")){
-			//playSequence(fileLocations.getLocation(6));
+			Thread t7 = new Thread (new playSequenceCommand(fileLocations.getLocation(6)));
+			t7.start();
 			tFeld.setText("Taste H gedrückt!");
 		}
 		else if(x.getId().equals("keyC2")){
-			//playSequence(fileLocations.getLocation(7));
+			Thread t8 = new Thread (new playSequenceCommand(fileLocations.getLocation(7)));
+			t8.start();
 			tFeld.setText("Taste C2 gedrückt!");
 		}
 		else tFeld.setText("Unbekannte Taste gedrückt");

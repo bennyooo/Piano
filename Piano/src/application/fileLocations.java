@@ -6,7 +6,7 @@ import java.util.*;
 public class fileLocations{
 
 	public static String getLocation(int i){
-		String location = "";
+		String location;
 		ArrayList<String> fileLocations = new ArrayList<String>();
 		Collections.addAll(fileLocations, 	"C:\\Users\\Benjamin\\Documents\\GitHub\\Piano\\Piano\\notes\\c1.mid",
 											"C:\\Users\\Benjamin\\Documents\\GitHub\\Piano\\Piano\\notes\\d.mid",
