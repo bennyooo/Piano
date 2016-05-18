@@ -16,33 +16,6 @@ import javax.sound.midi.*;
 
 public class KeyController {
 
-	public void playSequence(String location){
-
-		String jLocation = location.replace("\\", "/");
-
-		try{
-			Sequencer sq = MidiSystem.getSequencer();
-			InputStream midiFile = new BufferedInputStream(new FileInputStream(jLocation));
-
-			sq.open();
-			sq.setSequence(midiFile);
-			sq.start();
-			if (!(sq.isRunning())){
-				sq.stop();
-				sq.close();
-			}
-		}
-		catch(MidiUnavailableException e){
-			e.printStackTrace();
-		}
-		catch (InvalidMidiDataException e) {
-			e.printStackTrace();
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	@FXML
 	private Text tFeld;
 
@@ -52,35 +25,35 @@ public class KeyController {
 		Button x = (Button) event.getSource();
 
 		if(x.getId().equals("keyC")){
-			playSequence(fileLocations.getLocation(0));
+			Thread t1 = new Thread (new playSequenceCommand(fileLocations.getLocation(0)));
 			tFeld.setText("Taste C gedrückt!");
 		}
 		else if(x.getId().equals("keyD")){
-			playSequence(fileLocations.getLocation(1));
+			//playSequence(fileLocations.getLocation(1));
 			tFeld.setText("Taste D gedrückt!");
 		}
 		else if(x.getId().equals("keyE")){
-			playSequence(fileLocations.getLocation(2));
+			//playSequence(fileLocations.getLocation(2));
 			tFeld.setText("Taste E gedrückt!");
 		}
 		else if(x.getId().equals("keyF")){
-			playSequence(fileLocations.getLocation(3));
+			//playSequence(fileLocations.getLocation(3));
 			tFeld.setText("Taste F gedrückt!");
 		}
 		else if(x.getId().equals("keyG")){
-			playSequence(fileLocations.getLocation(4));
+			//playSequence(fileLocations.getLocation(4));
 			tFeld.setText("Taste G gedrückt!");
 		}
 		else if(x.getId().equals("keyA")){
-			playSequence(fileLocations.getLocation(5));
+			//playSequence(fileLocations.getLocation(5));
 			tFeld.setText("Taste A gedrückt!");
 		}
 		else if(x.getId().equals("keyH")){
-			playSequence(fileLocations.getLocation(6));
+			//playSequence(fileLocations.getLocation(6));
 			tFeld.setText("Taste H gedrückt!");
 		}
 		else if(x.getId().equals("keyC2")){
-			playSequence(fileLocations.getLocation(7));
+			//playSequence(fileLocations.getLocation(7));
 			tFeld.setText("Taste C2 gedrückt!");
 		}
 		else tFeld.setText("Unbekannte Taste gedrückt");
