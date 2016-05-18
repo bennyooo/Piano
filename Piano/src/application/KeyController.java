@@ -8,33 +8,38 @@ import javafx.scene.text.Text;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.TreeSet;
 
 import javax.sound.midi.*;
 
 public class KeyController {
 
-	public Sequencer initializeSequencer(String location){
+	public void playSequence(String location){
 
 		String jLocation = location.replace("\\", "/");
+
 		try{
 			Sequencer sq = MidiSystem.getSequencer();
 			InputStream midiFile = new BufferedInputStream(new FileInputStream(jLocation));
 
 			sq.open();
 			sq.setSequence(midiFile);
-			return sq;
+			sq.start();
+			if (!(sq.isRunning())){
+				sq.stop();
+				sq.close();
+			}
 		}
 		catch(MidiUnavailableException e){
 			e.printStackTrace();
-			return null;
 		}
 		catch (InvalidMidiDataException e) {
 			e.printStackTrace();
-			return null;
 		}
 		catch (IOException e) {
 			e.printStackTrace();
-			return null;
 		}
 	}
 
@@ -47,43 +52,35 @@ public class KeyController {
 		Button x = (Button) event.getSource();
 
 		if(x.getId().equals("keyC")){
+			playSequence(fileLocations.getLocation(0));
 			tFeld.setText("Taste C gedrückt!");
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\c1.mid");
-			seq.start();
 		}
 		else if(x.getId().equals("keyD")){
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\d.mid");
-			seq.start();
+			playSequence(fileLocations.getLocation(1));
 			tFeld.setText("Taste D gedrückt!");
 		}
 		else if(x.getId().equals("keyE")){
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\e.mid");
-			seq.start();
+			playSequence(fileLocations.getLocation(2));
 			tFeld.setText("Taste E gedrückt!");
 		}
 		else if(x.getId().equals("keyF")){
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\f.mid");
-			seq.start();
+			playSequence(fileLocations.getLocation(3));
 			tFeld.setText("Taste F gedrückt!");
 		}
 		else if(x.getId().equals("keyG")){
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\g.mid");
-			seq.start();
+			playSequence(fileLocations.getLocation(4));
 			tFeld.setText("Taste G gedrückt!");
 		}
 		else if(x.getId().equals("keyA")){
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\a.mid");
-			seq.start();
+			playSequence(fileLocations.getLocation(5));
 			tFeld.setText("Taste A gedrückt!");
 		}
 		else if(x.getId().equals("keyH")){
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\b.mid");
-			seq.start();
+			playSequence(fileLocations.getLocation(6));
 			tFeld.setText("Taste H gedrückt!");
 		}
 		else if(x.getId().equals("keyC2")){
-			Sequencer seq = initializeSequencer("C:\\Users\\Benjamin\\Downloads\\notes\\c2.mid");
-			seq.start();
+			playSequence(fileLocations.getLocation(7));
 			tFeld.setText("Taste C2 gedrückt!");
 		}
 		else tFeld.setText("Unbekannte Taste gedrückt");
