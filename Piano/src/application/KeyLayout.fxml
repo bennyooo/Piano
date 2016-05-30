@@ -37,23 +37,23 @@
       </GridPane>
       <Pane layoutX="52.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button id="10" fx:id="keyCSharp" mnemonicParsing="false" styleClass="blackKey" onAction="#playNote" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyDFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
          </children></Pane>
       <Pane layoutX="127.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button id="20" fx:id="keyDSharp" mnemonicParsing="false" styleClass="blackKey" onAction="#playNote" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyEFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
          </children></Pane>
       <Pane layoutX="277.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button id="30" fx:id="keyFSharp" mnemonicParsing="false" styleClass="blackKey" onAction="#playNote" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyGFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
          </children></Pane>
       <Pane layoutX="352.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button id="40" fx:id="keyGSharp" mnemonicParsing="false" styleClass="blackKey" onAction="#playNote" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyAFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
          </children></Pane>
       <Pane layoutX="427.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button id="50" fx:id="keyASharp" mnemonicParsing="false" styleClass="blackKey" onAction="#playNote" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyHFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
          </children></Pane>
       <Text fx:id="tFeld" layoutX="30" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="124.80337524414062" ></Text>
    </children>
