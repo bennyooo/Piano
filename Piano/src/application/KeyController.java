@@ -3,8 +3,10 @@ package application;
 import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
+import javax.sound.midi.*;
 
 public class KeyController {
 
@@ -12,50 +14,51 @@ public class KeyController {
 	private Text tFeld;
 
 	@FXML
-	private void playNote(ActionEvent event){
+	/**
+	 * Spielt Ton der Taste
+	 * @param event
+	 */
+	private void playNote(MouseEvent event) throws MidiUnavailableException{
 
 		Button x = (Button) event.getSource();
+		mySequencer ms = new mySequencer();
 
 		if(x.getId().equals("keyC")){
-			Thread t1 = new Thread (new playSequenceCommand(fileLocations.getLocation(0)));
-			t1.start();
-			tFeld.setText("Taste C gedrückt! ");
+			ms.setMySequence(fileLocations.getLocation(0));
 		}
 		else if(x.getId().equals("keyD")){
-			Thread t2 = new Thread (new playSequenceCommand(fileLocations.getLocation(1)));
-			t2.start();
-			tFeld.setText("Taste D gedrückt!");
+			ms.setMySequence(fileLocations.getLocation(1));
 		}
 		else if(x.getId().equals("keyE")){
-			Thread t3 = new Thread (new playSequenceCommand(fileLocations.getLocation(2)));
-			t3.start();
-			tFeld.setText("Taste E gedrückt!");
+			ms.setMySequence(fileLocations.getLocation(2));
 		}
 		else if(x.getId().equals("keyF")){
-			Thread t4 = new Thread (new playSequenceCommand(fileLocations.getLocation(3)));
-			t4.start();
-			tFeld.setText("Taste F gedrückt!");
+			ms.setMySequence(fileLocations.getLocation(3));
 		}
 		else if(x.getId().equals("keyG")){
-			Thread t5 = new Thread (new playSequenceCommand(fileLocations.getLocation(4)));
-			t5.start();
-			tFeld.setText("Taste G gedrückt!");
+			ms.setMySequence(fileLocations.getLocation(4));
 		}
 		else if(x.getId().equals("keyA")){
-			Thread t6 = new Thread (new playSequenceCommand(fileLocations.getLocation(5)));
-			t6.start();
-			tFeld.setText("Taste A gedrückt!");
+			ms.setMySequence(fileLocations.getLocation(5));
 		}
 		else if(x.getId().equals("keyH")){
-			Thread t7 = new Thread (new playSequenceCommand(fileLocations.getLocation(6)));
-			t7.start();
-			tFeld.setText("Taste H gedrückt!");
+			ms.setMySequence(fileLocations.getLocation(6));
 		}
 		else if(x.getId().equals("keyC2")){
-			Thread t8 = new Thread (new playSequenceCommand(fileLocations.getLocation(7)));
-			t8.start();
-			tFeld.setText("Taste C2 gedrückt!");
+			ms.setMySequence(fileLocations.getLocation(7));
 		}
-		else tFeld.setText("Unbekannte Taste gedrückt");
+		else tFeld.setText("Unbekannte Taste gedrueckt");
+	}
+	@FXML
+	/**
+	 * Beenden des Tons
+	 * @param event
+	 */
+	private void stopNote() throws MidiUnavailableException {
+
+			if (mySequencer.getMySequencer().isRunning()) {
+				mySequencer.getMySequencer().stop();
+				mySequencer.getMySequencer().close();
+			}
 	}
 }
