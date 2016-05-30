@@ -29,6 +29,11 @@ class mySequencer{
     public mySequencer() throws MidiUnavailableException {
     }
 
+    public static Sequencer getMySequencer(){
+        return sq;
+    }
+
+
     public void setMySequence(String location){
         try {
             this.jLocation = location.replace("\\", "/");
@@ -53,9 +58,5 @@ class mySequencer{
 
     public void stopSequence(Sequencer sequencer){
         sequencer.stop();
-    }
-
-    public static Sequencer getMySequencer(){
-        return sq;
     }
 }
