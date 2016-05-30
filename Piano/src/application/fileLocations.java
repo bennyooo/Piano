@@ -3,9 +3,9 @@ package application;
 import java.util.*;
 
 
-public class fileLocations{
+class fileLocations{
 
-	public static String getLocation(int i){
+	static String getLocation(int i){
 		String location = "";
 		ArrayList<String> fileLocations = new ArrayList<String>();
 		Collections.addAll(fileLocations, 	"C:\\Users\\Benjamin\\Documents\\GitHub\\Piano\\Piano\\notes\\c1.mid",
