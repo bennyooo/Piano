@@ -51,11 +51,11 @@ class mySequencer{
         sequencer.start();
     }
 
-    public static void stopSequence(Sequencer sequencer){
+    public void stopSequence(Sequencer sequencer){
         sequencer.stop();
     }
 
-    public Sequencer getMySequencer(){
-        return this.sq;
+    public static Sequencer getMySequencer(){
+        return sq;
     }
 }
