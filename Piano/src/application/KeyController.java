@@ -53,36 +53,40 @@ public class KeyController {
 
 		if(x.getId().equals("keyC")){
 			playSequence(fileLocations.getLocation(0));
-			tFeld.setText("Taste C gedrückt!");
+			tFeld.setText("Taste C gedrï¿½ckt!");
 		}
 		else if(x.getId().equals("keyD")){
 			playSequence(fileLocations.getLocation(1));
-			tFeld.setText("Taste D gedrückt!");
+			tFeld.setText("Taste D gedrï¿½ckt!");
 		}
 		else if(x.getId().equals("keyE")){
 			playSequence(fileLocations.getLocation(2));
-			tFeld.setText("Taste E gedrückt!");
+			tFeld.setText("Taste E gedrï¿½ckt!");
 		}
 		else if(x.getId().equals("keyF")){
 			playSequence(fileLocations.getLocation(3));
-			tFeld.setText("Taste F gedrückt!");
+			tFeld.setText("Taste F gedrï¿½ckt!");
 		}
 		else if(x.getId().equals("keyG")){
 			playSequence(fileLocations.getLocation(4));
-			tFeld.setText("Taste G gedrückt!");
+			tFeld.setText("Taste G gedrï¿½ckt!");
 		}
 		else if(x.getId().equals("keyA")){
 			playSequence(fileLocations.getLocation(5));
-			tFeld.setText("Taste A gedrückt!");
+			tFeld.setText("Taste A gedrï¿½ckt!");
 		}
 		else if(x.getId().equals("keyH")){
 			playSequence(fileLocations.getLocation(6));
-			tFeld.setText("Taste H gedrückt!");
+			tFeld.setText("Taste H gedrï¿½ckt!");
 		}
 		else if(x.getId().equals("keyC2")){
 			playSequence(fileLocations.getLocation(7));
-			tFeld.setText("Taste C2 gedrückt!");
+			tFeld.setText("Taste C2 gedrï¿½ckt!");
 		}
-		else tFeld.setText("Unbekannte Taste gedrückt");
+		else tFeld.setText("Unbekannte Taste gedrï¿½ckt");
+	}
+	@FXML
+	private void stopNote(ActionEvent event){
+		
 	}
 }

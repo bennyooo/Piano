@@ -55,6 +55,6 @@
          <children>
             <Button id="50" fx:id="keyASharp" mnemonicParsing="false" styleClass="blackKey" onAction="#playNote" prefHeight="147.0" prefWidth="45.0" />
          </children></Pane>
-      <Text fx:id="tFeld" layoutX="30" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="124.80337524414062" />
+      <Text fx:id="tFeld" layoutX="30" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="124.80337524414062" ></Text>
    </children>
 </Pane>
