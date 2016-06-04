@@ -2,6 +2,8 @@ package application;
 
 import javafx.event.*;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -10,16 +12,21 @@ import javax.sound.midi.*;
 
 public class KeyController {
 
+    private static boolean labelVisibility=true;
+
 	@FXML
-	private Text tFeld;
+    public Label cLabel;
+
+    //private Node parent = cLabel.getParent();
 
 	@FXML
 	/**
 	 * Spielt Ton der Taste
 	 * @param event
 	 */
-	private void playNote(MouseEvent event) throws MidiUnavailableException{
+	public void playNote(MouseEvent event) throws MidiUnavailableException{
 
+        //cLabel.setVisible(false);
 		Button x = (Button) event.getSource();
 		mySequencer ms = new mySequencer();
 
@@ -63,12 +70,31 @@ public class KeyController {
             ms.setMySequence(fileLocations.getLocation(12));
         }
 	}
+
+
+    @FXML
+    public void switchNoteLabels(){
+        Parent labelParent = cLabel.getParent();
+
+        if(!labelVisibility){
+            for(Node childLabel : labelParent.getChildrenUnmodifiable()){
+                childLabel.setVisible(true);
+                labelVisibility=true;
+            }
+        }
+        else
+            for(Node childLabel : labelParent.getChildrenUnmodifiable()){
+                childLabel.setVisible(false);
+                labelVisibility=false;
+            }
+    }
+
 	@FXML
 	/**
 	 * Beenden des Tons
 	 * @param event
 	 */
-	private void stopNote() throws MidiUnavailableException {
+	public void stopNote() throws MidiUnavailableException {
 
 			if (mySequencer.getMySequencer().isRunning()) {
 				mySequencer.getMySequencer().stop();

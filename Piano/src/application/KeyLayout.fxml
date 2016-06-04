@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Text?>
 
-<Pane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0"  xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.KeyController">
+<Pane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.KeyController">
    <children>
       <GridPane gridLinesVisible="true" layoutY="6.0" prefHeight="250.0" prefWidth="600.0">
         <columnConstraints>
@@ -37,24 +37,36 @@
       </GridPane>
       <Pane layoutX="52.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button fx:id="keyDFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyDFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
       <Pane layoutX="127.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button fx:id="keyEFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyEFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
       <Pane layoutX="277.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button fx:id="keyGFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyGFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
       <Pane layoutX="352.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button fx:id="keyAFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyAFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
       <Pane layoutX="427.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
          <children>
-            <Button fx:id="keyHFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" styleClass="blackKey" prefHeight="147.0" prefWidth="45.0" />
+            <Button fx:id="keyHFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
-      <Text fx:id="tFeld" layoutX="30" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="124.80337524414062" ></Text>
+      <Pane fx:id="noteLabelPane" layoutY="263.0" prefHeight="20.0" prefWidth="600.0">
+          <children>
+          <Label fx:id="cLabel" alignment="CENTER" prefWidth="78.0" styleClass="noteLabel" text="C" textAlignment="CENTER" GridPane.rowIndex="1" />
+          <Label fx:id="dLabel" alignment="CENTER" layoutX="75.0" prefWidth="78.0" styleClass="noteLabel" text="D" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          <Label fx:id="eLabel" alignment="CENTER" layoutX="150.0" prefWidth="78.0" styleClass="noteLabel" text="E" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+          <Label fx:id="fLabel" alignment="CENTER" layoutX="225.0" prefWidth="78.0" styleClass="noteLabel" text="F" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+          <Label fx:id="gLabel" alignment="CENTER" layoutX="300.0" prefWidth="78.0" styleClass="noteLabel" text="G" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+          <Label fx:id="aLabel" alignment="CENTER" layoutX="376.0" prefWidth="78.0" styleClass="noteLabel" text="A" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+          <Label fx:id="hLabel" alignment="CENTER" layoutX="451.0" prefWidth="78.0" styleClass="noteLabel" text="H" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+          <Label fx:id="c2Label" alignment="CENTER" layoutX="526.0" prefWidth="78.0" styleClass="noteLabel" text="C" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+          </children>
+      </Pane>
+      <Button fx:id="btnSwitchLabels" layoutY="318.0" mnemonicParsing="false" onAction="#switchNoteLabels" text="Notennamen" />
    </children>
 </Pane>
