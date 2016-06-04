@@ -9,7 +9,7 @@ import java.io.*;
  */
 class mySequencer{
 
-    private String jLocation = "";
+    private String jLocation;
     private static Sequencer sq;
 
     /**
