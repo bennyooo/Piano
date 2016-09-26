@@ -7,9 +7,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.KeyController">
+<Pane minHeight="400.0" minWidth="600.0" prefHeight="451.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.KeyController">
    <children>
-      <GridPane gridLinesVisible="true" layoutY="6.0" prefHeight="250.0" prefWidth="600.0">
+      <Pane fx:id="HalfNoteLabelPane" layoutX="10" layoutY="10" prefHeight="20" prefWidth="600">
+         <children>
+            <Label fx:id="cSharpLabel" text="C#" layoutX="52"></Label>
+            <Label text="D#" layoutX="127"></Label>
+            <Label text="F#" layoutX="277"></Label>
+            <Label text="G#" layoutX="352"></Label>
+            <Label text="A#" layoutX="427"></Label>
+         </children>
+      </Pane>
+      <GridPane gridLinesVisible="true" layoutY="50.0" prefHeight="250.0" prefWidth="600.0">
         <columnConstraints>
           <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
           <ColumnConstraints maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
@@ -35,27 +44,27 @@
             <Button fx:id="keyC2" maxWidth="75.0" minWidth="10.0" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="250.0" prefWidth="75.0" styleClass="whiteKey" GridPane.columnIndex="7" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Pane layoutX="52.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
+      <Pane layoutX="52.0" layoutY="50.0" prefHeight="147.0" prefWidth="45.0">
          <children>
             <Button fx:id="keyDFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
-      <Pane layoutX="127.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
+      <Pane layoutX="127.0" layoutY="50.0" prefHeight="147.0" prefWidth="45.0">
          <children>
             <Button fx:id="keyEFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
-      <Pane layoutX="277.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
+      <Pane layoutX="277.0" layoutY="50.0" prefHeight="147.0" prefWidth="45.0">
          <children>
             <Button fx:id="keyGFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
-      <Pane layoutX="352.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
+      <Pane layoutX="352.0" layoutY="50.0" prefHeight="147.0" prefWidth="45.0">
          <children>
             <Button fx:id="keyAFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
-      <Pane layoutX="427.0" layoutY="6.0" prefHeight="147.0" prefWidth="45.0">
+      <Pane layoutX="427.0" layoutY="50.0" prefHeight="147.0" prefWidth="45.0">
          <children>
             <Button fx:id="keyHFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
-      <Pane fx:id="noteLabelPane" layoutY="263.0" prefHeight="20.0" prefWidth="600.0">
+      <Pane fx:id="FullNoteLabelPane" layoutY="310.0" prefHeight="20.0" prefWidth="600.0">
           <children>
           <Label fx:id="cLabel" alignment="CENTER" prefWidth="78.0" styleClass="noteLabel" text="C" textAlignment="CENTER" GridPane.rowIndex="1" />
           <Label fx:id="dLabel" alignment="CENTER" layoutX="75.0" prefWidth="78.0" styleClass="noteLabel" text="D" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -67,6 +76,6 @@
           <Label fx:id="c2Label" alignment="CENTER" layoutX="526.0" prefWidth="78.0" styleClass="noteLabel" text="C" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="1" />
           </children>
       </Pane>
-      <Button fx:id="btnSwitchLabels" layoutY="318.0" mnemonicParsing="false" onAction="#switchNoteLabels" text="Notennamen" />
+      <Button fx:id="btnSwitchLabels" layoutY="350.0" mnemonicParsing="false" onAction="#switchNoteLabels" text="Notennamen" />
    </children>
 </Pane>
