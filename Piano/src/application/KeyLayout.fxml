@@ -9,13 +9,13 @@
 
 <Pane minHeight="400.0" minWidth="600.0" prefHeight="451.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.KeyController">
    <children>
-      <Pane fx:id="HalfNoteLabelPane" layoutX="10" layoutY="10" prefHeight="20" prefWidth="600">
+      <Pane fx:id="HalfNoteLabelPane" layoutX="0" layoutY="10" prefHeight="20" prefWidth="600" styleClass="noteLabel">
          <children>
-            <Label fx:id="cSharpLabel" text="C#" layoutX="52"></Label>
-            <Label text="D#" layoutX="127"></Label>
-            <Label text="F#" layoutX="277"></Label>
-            <Label text="G#" layoutX="352"></Label>
-            <Label text="A#" layoutX="427"></Label>
+            <Label fx:id="cSharpLabel" layoutX="62" text="C#" />
+            <Label fx:id="dSharpLabel" layoutX="137" text="D#" />
+            <Label fx:id="fSharpLabel" layoutX="287" text="F#" />
+            <Label fx:id="gSharpLabel" layoutX="362" text="G#" />
+            <Label fx:id="aSharpLabel" layoutX="437" text="A#" />
          </children>
       </Pane>
       <GridPane gridLinesVisible="true" layoutY="50.0" prefHeight="250.0" prefWidth="600.0">
@@ -64,18 +64,19 @@
          <children>
             <Button fx:id="keyHFlat" mnemonicParsing="false" onMousePressed="#playNote" onMouseReleased="#stopNote" prefHeight="147.0" prefWidth="45.0" styleClass="blackKey" />
          </children></Pane>
-      <Pane fx:id="FullNoteLabelPane" layoutY="310.0" prefHeight="20.0" prefWidth="600.0">
+      <Pane fx:id="FullNoteLabelPane" layoutX="0" layoutY="310.0" prefHeight="20.0" prefWidth="600.0" styleClass="noteLabel">
           <children>
-          <Label fx:id="cLabel" alignment="CENTER" prefWidth="78.0" styleClass="noteLabel" text="C" textAlignment="CENTER" GridPane.rowIndex="1" />
-          <Label fx:id="dLabel" alignment="CENTER" layoutX="75.0" prefWidth="78.0" styleClass="noteLabel" text="D" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-          <Label fx:id="eLabel" alignment="CENTER" layoutX="150.0" prefWidth="78.0" styleClass="noteLabel" text="E" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-          <Label fx:id="fLabel" alignment="CENTER" layoutX="225.0" prefWidth="78.0" styleClass="noteLabel" text="F" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-          <Label fx:id="gLabel" alignment="CENTER" layoutX="300.0" prefWidth="78.0" styleClass="noteLabel" text="G" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-          <Label fx:id="aLabel" alignment="CENTER" layoutX="376.0" prefWidth="78.0" styleClass="noteLabel" text="A" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-          <Label fx:id="hLabel" alignment="CENTER" layoutX="451.0" prefWidth="78.0" styleClass="noteLabel" text="H" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-          <Label fx:id="c2Label" alignment="CENTER" layoutX="526.0" prefWidth="78.0" styleClass="noteLabel" text="C" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+          <Label fx:id="cLabel" alignment="CENTER" prefWidth="78.0" text="C" textAlignment="CENTER" GridPane.rowIndex="1" />
+          <Label fx:id="dLabel" alignment="CENTER" layoutX="75.0" prefWidth="78.0" text="D" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          <Label fx:id="eLabel" alignment="CENTER" layoutX="150.0" prefWidth="78.0" text="E" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+          <Label fx:id="fLabel" alignment="CENTER" layoutX="225.0" prefWidth="78.0" text="F" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+          <Label fx:id="gLabel" alignment="CENTER" layoutX="300.0" prefWidth="78.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+          <Label fx:id="aLabel" alignment="CENTER" layoutX="376.0" prefWidth="78.0" text="A" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+          <Label fx:id="hLabel" alignment="CENTER" layoutX="451.0" prefWidth="78.0" text="H" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+          <Label fx:id="c2Label" alignment="CENTER" layoutX="526.0" prefWidth="78.0" text="C" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.rowIndex="1" />
           </children>
       </Pane>
-      <Button fx:id="btnSwitchLabels" layoutY="350.0" mnemonicParsing="false" onAction="#switchNoteLabels" text="Notennamen" />
+      <Button fx:id="btnSwitchLabels" layoutY="350.0" onAction="#changeLabelVisibility" text="Notennamen" />
+      <Button fx:id="btnSustain" layoutX="261.0" layoutY="350.0" onAction="#changeOnMouseRelease" mnemonicParsing="false" text="Sustain" />
    </children>
 </Pane>

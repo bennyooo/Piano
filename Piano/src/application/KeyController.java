@@ -6,16 +6,20 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 import javax.sound.midi.*;
 
 public class KeyController {
 
-    private static boolean labelVisibility=true;
+	private EventHandler originalEvent;
 
 	@FXML
-    public Label cLabel;
+	public Pane FullNoteLabelPane;
+	public Pane HalfNoteLabelPane;
+
+	public Button keyC;
 
     //private Node parent = cLabel.getParent();
 
@@ -71,23 +75,52 @@ public class KeyController {
         }
 	}
 
+	@FXML
+	/**
+	 * Ändert die Sichtbarkeit der Notennamen
+	 * @see #displayFullNoteLabels()
+	 * @see #displayHalfNoteLabels()
+	 */
+	public void changeLabelVisibility(){
+		displayHalfNoteLabels();
+		displayFullNoteLabels();
+	}
 
-    @FXML
-    public void switchNoteLabels(){
-        Parent labelParentFull = cLabel.getParent();
-
-        if(!labelVisibility){
-            for(Node childLabel : labelParentFull.getChildrenUnmodifiable()){
-                childLabel.setVisible(true);
-                labelVisibility=true;
-            }
-        }
-        else
-            for(Node childLabel : labelParentFull.getChildrenUnmodifiable()){
-                childLabel.setVisible(false);
-                labelVisibility=false;
-            }
+    public void displayFullNoteLabels(){
+        if(!(FullNoteLabelPane.isVisible())){
+			FullNoteLabelPane.setVisible(true);
+		}
+		else{
+			FullNoteLabelPane.setVisible(false);
+		}
     }
+
+    public void displayHalfNoteLabels(){
+		if(!(HalfNoteLabelPane.isVisible())){
+			HalfNoteLabelPane.setVisible(true);
+		}
+		else{
+			HalfNoteLabelPane.setVisible(false);
+		}
+	}
+
+	@FXML
+	public void changeOnMouseRelease(){
+
+		if(!(keyC.getOnMouseReleased().equals(null))){
+			setOriginalEvent(keyC.getOnMouseReleased());
+			keyC.setOnMouseReleased(null);
+		}
+		else keyC.setOnMouseReleased(getOriginalEvent());
+	}
+
+	private void setOriginalEvent(EventHandler eh){
+		this.originalEvent = eh;
+	}
+
+	private EventHandler getOriginalEvent(){
+		return this.originalEvent;
+	}
 
 	@FXML
 	/**
