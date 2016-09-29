@@ -74,16 +74,16 @@ public class KeyController {
 
     @FXML
     public void switchNoteLabels(){
-        Parent labelParent = cLabel.getParent();
+        Parent labelParentFull = cLabel.getParent();
 
         if(!labelVisibility){
-            for(Node childLabel : labelParent.getChildrenUnmodifiable()){
+            for(Node childLabel : labelParentFull.getChildrenUnmodifiable()){
                 childLabel.setVisible(true);
                 labelVisibility=true;
             }
         }
         else
-            for(Node childLabel : labelParent.getChildrenUnmodifiable()){
+            for(Node childLabel : labelParentFull.getChildrenUnmodifiable()){
                 childLabel.setVisible(false);
                 labelVisibility=false;
             }
