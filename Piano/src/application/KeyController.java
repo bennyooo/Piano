@@ -20,6 +20,20 @@ public class KeyController {
 	public Pane HalfNoteLabelPane;
 
 	public Button keyC;
+	public Button keyDFlat;
+	public Button keyD;
+	public Button keyEFlat;
+	public Button keyE;
+	public Button keyF;
+	public Button keyGFlat;
+	public Button keyG;
+	public Button keyAFlat;
+	public Button keyA;
+	public Button keyHFlat;
+	public Button keyH;
+	public Button keyC2;
+
+	public Button[] pianoKeys = {keyC, keyDFlat, keyD, keyEFlat, keyE, keyF, keyGFlat, keyG, keyAFlat, keyA, keyHFlat, keyC2};
 
     //private Node parent = cLabel.getParent();
 
@@ -106,16 +120,20 @@ public class KeyController {
 
 	@FXML
 	public void changeOnMouseRelease(){
-
-		if(!(keyC.getOnMouseReleased().equals(null))){
-			setOriginalEvent(keyC.getOnMouseReleased());
-			keyC.setOnMouseReleased(null);
+		for(Button b : pianoKeys) {
+			if (getOriginalEvent() == null) {
+				setOriginalEvent(b.getOnMouseReleased());
+			}
+			if (getOriginalEvent() == b.getOnMouseReleased()) {
+				b.setOnMouseReleased(event -> {
+					System.out.println("Mouserelease-Event empty \n");
+				});
+			} else b.setOnMouseReleased(getOriginalEvent());
 		}
-		else keyC.setOnMouseReleased(getOriginalEvent());
 	}
 
-	private void setOriginalEvent(EventHandler eh){
-		this.originalEvent = eh;
+	private void setOriginalEvent(EventHandler originalEvent){
+		this.originalEvent = originalEvent;
 	}
 
 	private EventHandler getOriginalEvent(){
